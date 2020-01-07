@@ -1,0 +1,32 @@
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+/* .flex-container{
+    height: 142vh;
+} */
+
+.logo img{
+    margin-left: 8px;
+}
+
+.sitetitle{
+    font-size: 28px;
+}
+
+.back{
+    margin-left: 17px;
+}
+
+.fancybox-container{
+    left: 17%;
+    top: 33%;
+}
+
+.iframe{
+    width: 300%;
+}
+
+.chatPage{
+    /* height: 66vh; */
+}

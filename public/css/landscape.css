@@ -1,0 +1,162 @@
+/* 
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+
+.sitetitle{
+    font-size: 48px;
+  }
+
+  .logo img {
+    width: 26%;
+    margin-top: 15px;
+    margin-left: 12px;
+}
+
+.grid-container {
+    height: 153vh;
+}
+
+.eventPage {
+    margin-bottom: 46%;
+}
+
+
+.t1, .t2, .t3 {
+    margin-left: 92px;
+}
+
+.chatButton {
+    width: 70px;
+    height: 70px;
+    margin-right: 54px;
+    margin-top: -30px;
+    font-size: 20px;
+}
+
+.chatPage {
+    height: 92vh;
+
+}
+
+.chatPage:before {
+    font-size: 45px;
+}
+
+#logout{
+    width: 67px;
+    height: 33px;
+    border-radius: 50px;
+    font-size: 17px;
+  }
+  
+  #updateUser{
+    width: 117px;
+    height: 33px;
+    border-radius: 50px;
+    margin-top: 0;
+    margin-left: 17px;
+    font-size: 17px;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: row;
+  }
+
+  #posts{
+    width: 653px;
+    height: 449px;
+  }
+
+  .post{
+    padding: 8px;
+    margin: 3px;
+  }
+
+  .back {
+    border-radius: 16px;
+    height: 28px;
+    margin-left: 19px;
+    font-size: 17px;
+    margin-top: 23px;
+}
+
+
+.t1 tr, th, td .t2 tr, th, td .t3 tr, th, td {
+    height: 32px;
+}
+
+iframe{
+    width: 90%;
+      height: 301px;
+  }
+
+  .fancybox-container {
+    position: absolute;
+    top: 37%;
+      left: 18%;
+      width: 67%;
+  }
+
+
+
+
+  /* ##Device = Most of the Smartphones Mobiles (Landscape) XSMALL
+  ##Screen = B/w 320px to 479px
+*/ 
+
+   /* @media only screen and (min-width : 321px){
+
+    .sitetitle{
+        font-size: 33px;
+    }
+
+
+
+    .flex-container {
+        height: 264vh
+}
+
+.t1 tr, th, td .t2 tr, th, td .t3 tr, th, td {
+    height: 28px;
+}
+
+
+.logo img {
+    margin-top: 31px;
+    margin-left: 0px;
+}
+
+.chatButton {
+    width: 50px;
+    height: 50px;
+    font-size: 17px;
+    margin-right: 22px;
+}
+
+.eventPage {
+    margin-top: -22%;
+}
+
+iframe{
+    height: 237px;
+}
+
+.fancybox-container {
+    top: 14%;
+    
+}
+
+.chatPage:before {
+    font-size: 23px;
+    right: 10px;
+    top: 167px;
+}
+
+#posts {
+    width: 416px;
+    height: 309px;
+}
+
+} */

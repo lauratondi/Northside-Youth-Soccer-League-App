@@ -1,0 +1,335 @@
+ body { 
+    margin: 0;
+    padding: 0; 
+}
+
+html {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
+    }
+
+
+.grid-container{
+    display: grid;
+    grid-template-columns: auto ;
+    max-width: 100%;
+    height: 100vh;
+    background-image: url("../soccer.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: auto;
+    /* flex-direction: column; */
+}
+
+
+img{
+    width: 100%;
+}
+/* HEADER */
+
+.header{
+    
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    width: 100%;   
+}
+
+
+.sitetitle{
+    background-color: #033949;
+    color: white;
+    display: flex;
+    /* order: 0; */
+    max-width: 100%;
+    /* height: 30%; */
+    justify-content:center;
+}
+
+
+.logo img{
+    display:flex;
+    width: 25%;
+    margin-top: 10px;
+    margin-left: 13px;
+}
+
+
+/* CONTAINERS */
+.item2, .item3, .item4 {
+    display: flex;
+    order:2;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .homePage, .chatPage, .eventPage{
+    box-sizing: border-box;
+    max-width: 100%;
+    
+    
+}
+/* TABLES */
+
+.t1, .t2, .t3{
+    margin-left:24px;
+}
+
+.t1, .t2{
+    width: 90%;
+    border-collapse:separate; 
+    border-spacing:0 8px;
+align-self: center;
+}
+
+ .t1 tr,th, td .t2 tr,th, td{
+    border: solid black 2px;
+    
+    
+}
+
+.bordSpace{
+    border-right:hidden;
+}
+
+.t1 th, .t2 th{
+    background-color: #033949;
+    color: white;
+}
+
+.t3{
+    align-self: center;
+    width: 90%;
+    border-collapse: collapse;
+}
+
+.t3 td {
+    border-top: hidden;
+    /* border-bottom: hidden; */
+    
+}
+
+.t3 th{
+    background-color: grey;
+}
+
+.t3 tr:nth-child(even) {
+    background-color: lightgrey;}
+
+ .t4{
+    align-self: center;
+     width: 90%;
+    border-collapse: collapse;
+        
+    }
+
+
+/* BUTTONS */
+.back{ 
+   align-self: baseline;
+    border-radius: 10px;
+    background-color: #033949;
+    border-color: black;
+    color: white;
+    width: 13%;
+    margin-top: 5px;
+}
+
+.btn-primary {
+    color: #007bff;
+  }
+
+
+  /* FANCYBOX */
+.fancybox-container{
+    position: absolute;
+    top: 36%;
+    left: 7%;
+}
+
+.fancybox-infobar{
+    display: none;
+}
+
+.fancybox-button--close{
+    color:white;
+    width: 11%;
+    padding: 3px;
+   
+}
+
+
+/* --------------------- CHAT STYLE --------------------------------------------------*/
+
+#posts{
+    height: 400px;
+    width: 90%;
+    overflow: scroll;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+}
+
+
+.post{
+    background-color:beige;
+    border: 1px black solid;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 2px;
+    width: 70%;
+}
+.myPost {
+    align-self: flex-end;
+    background-color: chartreuse;
+}
+.advice{
+    height: 400px;
+    width: 400px;
+    overflow: scroll;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: grey;
+    color: white;
+    opacity: .7;
+    border-radius: 10px;
+}
+
+.box{
+    background-color: transparent;
+    border: 1px grey solid;
+}
+
+/* .chat{
+    height: 400px;
+} */
+
+.chatPage{
+    /* height: 100vh; */
+    /* display: flex; */
+    flex-direction: column;
+    margin-left: 45px;
+}
+
+.chatPage:before{
+    content: "Welcome to our NYSL CHAT";
+    font-size: 30px;
+    font-family: Verdana;
+    margin-bottom: 30px;
+}
+
+/* .chatPage:after{
+    content: "Write your post and click 'Send'";
+    margin-top: 70px;
+    font-size: 14px;
+    color: grey;
+} */
+
+.inputs{
+    display: flex;
+}
+
+input{
+    margin-right: 15px;
+}
+
+.notification:not(:last-child){
+    margin-bottom: .3rem;
+}
+
+
+.name{
+    font-size: 12px;
+    font-weight: bold;
+    color: lightyellow;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+}
+
+#logout{
+    display: flex;
+    border-radius: 12px;
+    background-color: #033949;
+    border-color: black;
+    color: white;
+    width: 14%;
+    height: 5%;
+}
+
+#updateUser{
+    display: flex;
+    border-radius: 12px;
+    background-color: #033949;
+    border-color: black;
+    color: white;
+    width: 25%;
+    height: 5%;
+    margin-top: 5px;
+}
+
+.chatButton{
+    color: white;
+    border-radius: 50%;
+    background-color: #033949;
+    border-color: black;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    float: right;
+    margin-right: 21px;
+    
+}
+
+
+@media screen and (orientation: landscape) {
+
+    .grid-container{
+        max-width: 100%;
+        grid-template-columns: 50% 50%;
+        grid-template-rows:  auto;
+        grid-template-areas:
+        'homePage eventPage';
+        display: flex;
+        flex-flow: column nowrap;
+    }
+
+
+    .item2{
+        grid-area: homePage;
+        
+    }
+
+    .item3{
+        grid-area: eventPage;
+
+    }
+
+    .homePage{
+        width: 100%;
+        align-self: flex-start;
+        /* grid-column: 1 ;
+  grid-row: 1; */
+    }
+
+    .eventPage{
+        width:100%;
+        /* align-self: flex-end;
+        grid-column: 2;
+   grid-row: 1; */
+    }
+}

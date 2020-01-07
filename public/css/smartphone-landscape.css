@@ -1,0 +1,82 @@
+/* ##Device = Most of the Smartphones Mobiles (Landscape) XSMALL
+  ##Screen = B/w 320px to 479px
+*/ 
+
+    
+
+    .sitetitle{
+        font-size: 27px;
+    }
+
+
+
+    .grid-container {
+        /* height: 297vh; */
+}
+
+.t1 tr, th, td .t2 tr, th, td .t3 tr, th, td {
+    height: 28px;
+}
+
+.t1, .t2, .t3 {
+    margin-left: 23px;
+    width: 100%;
+
+}
+
+.logo img {
+        margin-top: 20px;
+        margin-left: 14px;
+        width: 31%;
+}
+
+.chatButton {
+    width: 50px;
+    height: 50px;
+    font-size: 17px;
+    margin-right: -24px;
+}
+
+.back{
+    margin-top: 15px;
+    margin-bottom: 13px;
+    margin-left: 6px;
+}
+
+.eventPage {
+    margin-top: 34px;
+}
+
+iframe{
+    height: 182px;
+}
+
+.fancybox-container {
+    top: 45%;
+    left: 19%;
+    
+}
+
+.chatPage:before {
+    font-size: 23px;
+    right: 10px;
+    top: 167px;
+}
+
+#posts {
+    width: 416px;
+    height: 309px;
+}
+
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    margin-top: 21px;
+}
+
+#updateUser {
+    margin-left: 20px;
+    width: 23%;
+    margin-top: 0px;
+}

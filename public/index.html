@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <title>Northside Youth Soccer League</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- <link rel="stylesheet" href="jquery.fancybox.min.css"> -->
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" media="screen and (min-width:320px) and (max-width:480px) and (orientation: portrait)" href="css/xsmall.css"/>
+    <!-- <link rel="stylesheet" media="screen and (min-width:481px) and (max-width:767px)" href="css/small.css"/> -->
+    <link rel="stylesheet" media="screen and (min-width:768px) and (max-width:1024px) and (orientation : portrait)" href="css/medium.css"/>
+    <!-- <link rel="stylesheet" href="css/smartphone-landscape.css" media="only screen and (min-width:321px) and (orientation: landscape)">     -->
+    <!-- <link rel="stylesheet" media="screen and (min-device-width:768px) and (max-device-width:1024px) and (orientation: landscape)" href="css/landscape.css"> -->
+    <!-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+    
+
+
+    <link rel="shortcut icon" sizes="128x128" href="images/app_icon144.png">
+    <link rel="shortcut icon" sizes="196x196" href="images/app_icon192.png">
+
+    <link rel="apple-touch-icon" href="app_icon60.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="images/Icon-App-76x76@1x.png">
+    <!-- <link rel="apple-touch-icon" sizes="120x120" href="app_icon120.png">
+<link rel="apple-touch-icon" sizes="152x152" href="app_icon152.png"> -->
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui"> -->
+
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+</head>
+
+<body>
+
+    <div class="grid-container">
+
+        <div class="header">
+
+            <div class="sitetitle">
+                <h2>Northside Youth Soccer League</h2>
+            </div>
+
+            <div class="logo">
+                <img src="nysl_logo.png" alt="nysl_logo">
+            </div>
+        </div>
+
+        <div id="app">
+            <!-- HomePage DIV -->
+            <div class="item2">
+            <div class="homePage" v-if="page === 'homePage'">
+                    <!-- || page === 'eventPage' -->
+
+                <button class="chatButton" @click="changePage ('chatPage')">Chat</button>
+
+                <table class="t1">
+                    <thead>
+                        <tr>
+                            <th colspan="3">Schedule</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="(game,index) in games" @click="changePage('eventPage', index)">
+                            <td class="bordSpace">{{game.day}}</td>
+                            <td class="bordSpace">{{game.local}}</td>
+                            <td>{{game.visitor}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+
+            <!-- EventPage DIV -->
+            <div class="item3">
+            <div class="eventPage" v-if="page == 'eventPage' && game != null">
+                <table class="t2">
+                    <thead>
+                        <tr>
+                            <th colspan="3">Daily Schedule</th>
+                        </tr>
+                    </thead>
+                </table>
+
+                <table class="t3">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Teams</th>
+                            <th>Time</th>
+                            <th>Location</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{{game.day}}</td>
+                            <td>{{game.local}} and {{game.visitor}}</td>
+                            <td>{{game.time}}</td>
+                            <td>
+                                <a data-fancybox data-type="iframe" class="btn btn-primary" v-bind:href="game.map">
+                                    {{game.location}}
+                                </a>
+
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <button @click="changePage('homePage')" class="back">Back</button>
+
+            </div>
+        </div>
+
+            <!-- ChatPage DIV -->
+            <div class="item4">
+            <div class="chatPage" v-if="page == 'chatPage'">
+
+                <div class="advice" v-if="user==null">
+                    {{advice}}
+                    <button id="login" class="button is-info" @click='login'>Login!</button>
+                </div>
+
+                <div v-if="user!=null">
+
+                    <div class="buttons">
+                        <button id="logout" @click='logout'>Logout</button>
+                        <button id="updateUser" @click='updateUser'>Change User</button>
+                    </div>
+
+                    <div id="posts" class="box" v-chat-scroll>
+
+                        <div class="post" v-for='post in posts' :class="{myPost : user.email == post.email}">
+                            {{post.name}}:{{post.body}}
+
+                            
+                        </div>
+
+                    </div>
+
+                    <div class="inputs">
+                        <input id="textInput" class="input" type="text" placeholder="Your message..."
+                            v-model='textInput'>
+                        <button id="create-post" class="button is-primary" @click="writeNewPost">Send</button>
+                    </div>
+
+                </div>
+                <button @click="changePage('homePage')" class="back">Back</button>
+            </div>
+        </div>
+
+        </div>
+
+    </div>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/6.5.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.5.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.5.0/firebase-database.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script> -->
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyC15J6-AcE8NdCozVreRTDzUFyvsla6poc",
+            authDomain: "nysl-web-app-afadd.firebaseapp.com",
+            databaseURL: "https://nysl-web-app-afadd.firebaseio.com",
+            projectId: "nysl-web-app-afadd",
+            storageBucket: "",
+            messagingSenderId: "1001163103687",
+            appId: "1:1001163103687:web:825f1eb2db5c36ee"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-chat-scroll/dist/vue-chat-scroll.min.js"></script>
+    <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+    <script src="./js/dataSchedule.js"></script>
+
+</body>
+
+</html>
