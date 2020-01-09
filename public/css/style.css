@@ -193,7 +193,7 @@ align-self: center;
 }
 .advice{
     height: 400px;
-    width: 400px;
+    /* width: 400px; */
     overflow: scroll;
     margin-bottom: 20px;
     display: flex;
@@ -219,7 +219,7 @@ align-self: center;
     /* height: 100vh; */
     /* display: flex; */
     flex-direction: column;
-    margin-left: 45px;
+    /* margin-left: 45px; */
 }
 
 .chatPage:before{
